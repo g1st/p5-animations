@@ -5,13 +5,26 @@ function setup() {
   noStroke();
 }
 
+const smallInnerCircle =
+  window.innerWidth < 1200 ? window.innerWidth * 0.08 : 96;
+const bigInnerCircle =
+  window.innerWidth < 1200 ? window.innerWidth * 0.18 : 216;
+
 function draw() {
   drawArcs(300);
 
   // black circles in the middle
   fill(0);
-  circle(width / 2 - 30, height / 2 + 20, 60);
-  circle(width / 2 + 45, height / 2 - 40, 140);
+  circle(
+    width / 2 - smallInnerCircle / 2,
+    height / 2 + smallInnerCircle / 2,
+    smallInnerCircle
+  );
+  circle(
+    width / 2 + bigInnerCircle / 3.2,
+    height / 2 - bigInnerCircle / 4.5,
+    bigInnerCircle
+  );
 }
 
 function drawArcs(numOfArcs) {
