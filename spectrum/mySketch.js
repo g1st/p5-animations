@@ -4,23 +4,31 @@ function setup() {
 }
 
 let seed = 123;
+const smallerDimension =
+  window.innerWidth > window.innerHeight
+    ? window.innerHeight
+    : window.innerWidth;
+const bigCircle = smallerDimension * 0.95;
+const mediumCircle = smallerDimension * 0.65;
+const smallCircle = smallerDimension * 0.35;
 
 function draw() {
   randomSeed(seed);
 
   for (let i = 0; i < 40; i++) {
-    makeArc(700, i);
-    makeArc(500, i);
-    makeArc(300, i);
+    makeArc(bigCircle, i);
+    makeArc(mediumCircle, i);
+    makeArc(smallCircle, i);
   }
 
   drawCenter();
 }
 
 function makeArc(w, e, rot) {
-  strokeWeight(20);
+  strokeWeight(width > 700 ? 20 : 10);
   stroke('snow');
-  fill(random(50, 150), random(50, 150), random(100, 255));
+  colorMode(HSB, 100);
+  fill(random(100), 50, 100);
 
   push();
   rotationAngle = map(mouseX, 0, width, 0, TWO_PI);
@@ -33,7 +41,8 @@ function makeArc(w, e, rot) {
 function drawCenter() {
   noStroke();
   fill('snow');
-  circle(width / 2, height / 2, 100);
+  const circleDiameter = width > 700 ? 100 : 35;
+  circle(width / 2, height / 2, circleDiameter);
 }
 
 function mouseMoved() {
