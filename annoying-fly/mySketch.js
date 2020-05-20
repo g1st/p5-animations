@@ -5,7 +5,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(80);
-  fly = new Fly(width / 2, height / 2, 14, 6);
+  fly = new Fly(width / 2, height / 2);
   wind = new WindInfo();
 }
 
@@ -44,7 +44,7 @@ function draw() {
 }
 
 class Fly {
-  constructor(x, y, xSpeed, ySpeed) {
+  constructor(x, y) {
     this.location = new p5.Vector(x, y);
     this.velocity = new p5.Vector(0, 0);
     this.acceleration = new p5.Vector(0, 0);
@@ -73,7 +73,7 @@ class Fly {
 
   display() {
     fill('pink');
-    image(flyImage, this.location.x, this.location.y, 100, 100);
+    image(flyImage, this.location.x, this.location.y - 50, 100, 100);
   }
 }
 
