@@ -48,6 +48,7 @@ class Fly {
     this.location = new p5.Vector(x, y);
     this.velocity = new p5.Vector(0, 0);
     this.acceleration = new p5.Vector(0, 0);
+    this.mass = 0.5;
   }
 
   move() {
@@ -59,6 +60,7 @@ class Fly {
   }
 
   applyForce(force) {
+    force.div(this.mass);
     this.acceleration.add(force);
   }
 
@@ -79,7 +81,7 @@ class Fly {
 
 class WindInfo {
   constructor() {
-    this.info = 'Press mouse to blow window to the right!';
+    this.info = 'Press mouse to blow wind!';
   }
 
   information() {
