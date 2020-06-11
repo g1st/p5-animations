@@ -29,10 +29,12 @@ function draw() {
 
 function drawAndMoveText() {
   fill(clr);
+
   for (let point of points) {
-    const posX = point.x + moveX + random(-2, 2);
-    const posY = point.y + moveY + random(-2, 2);
-    stroke(1);
+    const posX = point.x + moveX + randomGaussian(0, 2);
+    const posY = point.y + moveY + randomGaussian(0, 2);
+
+    noStroke();
     circle(posX, posY, 6);
   }
 
