@@ -16,12 +16,13 @@ class Asteroid {
 
     if (random() < 0.8) {
       this.velocity = p5.Vector.random2D().mult(this.speed);
-
+      this.lives = int(abs(randomGaussian(0, 2))) + 1;
       // stationary asteroid
     } else {
       this.velocity = p5.Vector.random2D().mult(0);
       // global meteor image raferences
       this.still = random([meteor1, meteor2, meteor3]);
+      this.lives = random([4, 5, 6]);
     }
   }
 
@@ -38,7 +39,9 @@ class Asteroid {
 
       const angle = radians(map(frameCount % 90, 0, 90, 0, 360));
 
-      strokeWeight(map(sin(this.phase + frameCount / 10), -1, 1, 1, 6));
+      strokeWeight(
+        map(sin(this.phase + frameCount / 10), -1, 1, 1, this.lives * 4)
+      );
 
       // todo need a better color
       stroke('red');
@@ -57,28 +60,26 @@ class Asteroid {
     // info text on top of the asteroid
     fill('white');
     noStroke();
-    text(
-      `${int(this.position.x)}, ${int(this.position.y)}`,
-      this.position.x - 20,
-      this.position.y
-    );
+    text(`${this.lives}`, this.position.x - 5, this.position.y);
   }
 
   checkIfHit() {
     for (let bullet of spaceShip.bullets) {
-      // find dist between asteroid centre and bullet centre
       const distance = this.position.dist(bullet.position);
-      // find distance of object radius and bullet radius
       const radiusDistance = this.radius + bullet.radius;
-      // if first < r1 + r2 = HIT HAPPENDING
+
       if (distance < radiusDistance) {
-        shotHitAsteroidSound.play();
-        // kill object
-        this.isDead = true;
-        // kill bullet
+        this.lives -= 1;
         bullet.isDead = true;
-        // update global score
-        score++;
+
+        if (this.lives < 1) {
+          asteroidDestroySound.play();
+          score++;
+          this.isDead = true;
+        } else {
+          // just play asteroid hit sound
+          asteroidImpactSound.play();
+        }
 
         // todo create new asteroid ?
       }

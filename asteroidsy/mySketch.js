@@ -15,7 +15,7 @@ let meteor2;
 let meteor3;
 let meteor4;
 let shotSound;
-let shotHitAsteroidSound;
+let asteroidDestroySound;
 
 function preload() {
   // images
@@ -27,7 +27,8 @@ function preload() {
 
   // sounds
   shotSound = loadSound('assets/sounds/shot.wav');
-  shotHitAsteroidSound = loadSound('assets/sounds/explosion.ogg');
+  asteroidDestroySound = loadSound('assets/sounds/explosion.ogg');
+  asteroidImpactSound = loadSound('assets/sounds/impact.ogg');
 }
 
 function setup() {
@@ -36,14 +37,15 @@ function setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   background(palette.background);
-  shotSound.setVolume(0.04);
-  shotHitAsteroidSound.setVolume(0.04);
+  shotSound.setVolume(0.01);
+  asteroidDestroySound.setVolume(0.02);
+  asteroidImpactSound.setVolume(0.04);
 
   cameraPos = createVector(0, 0);
   radarDiameter = Math.min(width, height);
   spaceShip = new SpaceShip();
   // numOfAsteroids, spaceBoundary, radarDiameter
-  asteroids = new Asteroids(500, 5000, radarDiameter);
+  asteroids = new Asteroids(750, 5000, radarDiameter);
 }
 
 function draw() {
