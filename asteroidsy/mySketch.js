@@ -14,13 +14,20 @@ let meteor1;
 let meteor2;
 let meteor3;
 let meteor4;
+let shotSound;
+let shotHitAsteroidSound;
 
 function preload() {
+  // images
   shipImage = loadImage('assets/playerShip1_red.png');
   meteor1 = loadImage('assets/meteorBrown_big1.png');
   meteor2 = loadImage('assets/meteorBrown_big2.png');
   meteor3 = loadImage('assets/meteorBrown_big3.png');
   meteor4 = loadImage('assets/meteorBrown_big4.png');
+
+  // sounds
+  shotSound = loadSound('assets/sounds/shot.wav');
+  shotHitAsteroidSound = loadSound('assets/sounds/explosion.ogg');
 }
 
 function setup() {
@@ -29,6 +36,9 @@ function setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   background(palette.background);
+  shotSound.setVolume(0.04);
+  shotHitAsteroidSound.setVolume(0.04);
+
   cameraPos = createVector(0, 0);
   radarDiameter = Math.min(width, height);
   spaceShip = new SpaceShip();

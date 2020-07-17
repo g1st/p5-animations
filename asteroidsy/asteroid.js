@@ -44,9 +44,7 @@ class Asteroid {
       stroke('red');
 
       // check if bullet hit theasteroid
-      if (this.checkIfHit()) {
-        console.log('HIIIIT');
-      }
+      this.checkIfHit();
     }
 
     if (this.still) {
@@ -74,6 +72,7 @@ class Asteroid {
       const radiusDistance = this.radius + bullet.radius;
       // if first < r1 + r2 = HIT HAPPENDING
       if (distance < radiusDistance) {
+        shotHitAsteroidSound.play();
         // kill object
         this.isDead = true;
         // kill bullet

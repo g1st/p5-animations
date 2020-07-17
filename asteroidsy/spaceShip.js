@@ -42,13 +42,16 @@ class SpaceShip {
     };
 
     const shotInterval = 150; // ms
+
     if (this.bullets.length < 1) {
       this.bullets.push(rocket);
+      shotSound.play();
     } else if (
       millis() >
       this.bullets[this.bullets.length - 1].shotTime + shotInterval
     ) {
       this.bullets.push(rocket);
+      shotSound.play();
     }
   }
 
