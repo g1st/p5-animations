@@ -46,6 +46,9 @@ class Asteroid {
       // todo need a better color
       stroke('red');
 
+      // check if ship collided with an asteroid
+      this.checkShipCollision();
+
       // check if bullet hit theasteroid
       this.checkIfHit();
     }
@@ -83,6 +86,18 @@ class Asteroid {
 
         // todo create new asteroid ?
       }
+    }
+  }
+
+  checkShipCollision() {
+    const distance = this.position.dist(spaceShip.position);
+    const radiusDistance = this.radius + spaceShip.size / 2;
+
+    if (distance < radiusDistance) {
+      asteroidDestroySound.play();
+      this.lives = 0;
+      this.isDead = true;
+      spaceShip.lives--;
     }
   }
 

@@ -17,6 +17,7 @@ let meteor4;
 let shotSound;
 let asteroidDestroySound;
 let sound = true;
+let gameOver = true;
 
 function preload() {
   // images

@@ -10,6 +10,13 @@ class SpaceShip {
     this.trail = [];
     this.shotSpeed = 1;
     this.bullets = [];
+    this.lives = 3;
+  }
+
+  checkLives() {
+    if (this.lives < 1) {
+      gameOver = true;
+    }
   }
 
   drawRadar() {
@@ -22,6 +29,7 @@ class SpaceShip {
     this.drawTrail();
     translate(this.position.x, this.position.y);
     this.drawRadar();
+    this.checkLives();
     rotate(this.direction.heading() + PI / 2);
 
     image(shipImage, 0, 0, this.size, this.size);
@@ -67,8 +75,6 @@ class SpaceShip {
         bullet.velocity.add(bullet.direction.copy().mult(this.shotSpeed))
       );
     }
-
-    // todo if shot reached length of radardiameter/2 - remove shot
   }
 
   drawShots() {
@@ -80,8 +86,6 @@ class SpaceShip {
       pop();
     }
   }
-
-  // todo checkIfHitAsteroid?
 
   showSpeed() {
     fill('white');
