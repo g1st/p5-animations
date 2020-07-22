@@ -5,7 +5,7 @@ class SpaceShip {
     this.size = 60;
     this.thrust = 0.4;
     this.direction = createVector(0, -1);
-    this.turnSpeed = 0.06;
+    this.turnSpeed = 0.1;
     this.isThrusting = false;
     this.trail = [];
     this.shotSpeed = 1;
