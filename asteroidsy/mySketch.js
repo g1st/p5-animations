@@ -16,6 +16,7 @@ let meteor3;
 let meteor4;
 let shotSound;
 let asteroidDestroySound;
+let sound = true;
 
 function preload() {
   // images
@@ -51,7 +52,12 @@ function setup() {
 function draw() {
   background(palette.background);
   fill('white');
-  text(`FPS: ${int(frameRate())}`, 25, 25);
+  text(
+    `FPS: ${int(frameRate())}
+SOUND: ${sound ? 'ON' : 'OFF'}`,
+    25,
+    25
+  );
   fill('white');
   text(`SCORE: ${score}`, width - 100, 25);
   scale(scaling);
@@ -88,5 +94,13 @@ function mouseWheel(event) {
   }
   if (scaling < 0.1) {
     scaling = 0.1;
+  }
+}
+
+function keyPressed() {
+  // m
+  if (keyCode === 77) {
+    sound = !sound;
+    masterVolume(+sound);
   }
 }
