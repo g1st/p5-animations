@@ -44,7 +44,7 @@ class Asteroid {
       );
 
       // todo need a better color
-      stroke('red');
+      stroke('#bb2124');
 
       // check if ship collided with an asteroid
       this.checkShipCollision();

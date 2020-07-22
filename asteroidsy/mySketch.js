@@ -1,9 +1,9 @@
-// https://www.colourlovers.com/palette/440186/July
+// https://colorswall.com/palette/134/
 const palette = {
-  name: 'July',
-  colors: ['#F2A73D', '#A0E8B7', '#EB0A44', '#F2643D'],
-  background: '#26251C',
+  colors: ['#7649fe', '#5643fd', '#ba1e68', '#a11dec'],
+  background: '#1d1135',
 };
+
 let score = 0;
 let highScore = 0;
 let scaling = 1;
