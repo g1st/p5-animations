@@ -51,18 +51,10 @@ function setup() {
 
 function draw() {
   background(palette.background);
-  fill('white');
-  text(
-    `FPS: ${int(frameRate())}
-SOUND: ${sound ? 'ON' : 'OFF'}`,
-    25,
-    25
-  );
-  fill('white');
-  text(`SCORE: ${score}`, width - 100, 25);
+
   scale(scaling);
   drawRadar();
-  showCameraPosition();
+  displayInfo();
   spaceShip.showSpeed();
   translate(-cameraPos.x + width / 2, -cameraPos.y + height / 2);
 
@@ -81,9 +73,18 @@ function drawRadar() {
   circle(width / 2, height / 2, radarDiameter);
 }
 
-function showCameraPosition() {
+function displayInfo() {
+  // fps and sound
   fill('white');
   noStroke();
+
+  text(
+    `FPS: ${int(frameRate())}
+SOUND: ${sound ? 'ON' : 'OFF'}`,
+    25,
+    25
+  );
+  text(`SCORE: ${score}`, width - 100, 25);
   text(`Position: ${int(cameraPos.x)}, ${int(cameraPos.y)}`, 50, height - 50);
 }
 
