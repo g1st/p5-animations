@@ -12,10 +12,16 @@ class SpaceShip {
     this.bullets = [];
   }
 
+  drawRadar() {
+    fill(255, 255, 255, 5);
+    circle(0, 0, radarDiameter);
+  }
+
   drawShip() {
     push();
     this.drawTrail();
     translate(this.position.x, this.position.y);
+    this.drawRadar();
     rotate(this.direction.heading() + PI / 2);
 
     image(shipImage, 0, 0, this.size, this.size);

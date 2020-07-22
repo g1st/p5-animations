@@ -53,7 +53,6 @@ function draw() {
   background(palette.background);
 
   scale(scaling);
-  drawRadar();
   displayInfo();
   spaceShip.showSpeed();
   translate(-cameraPos.x + width / 2, -cameraPos.y + height / 2);
@@ -66,11 +65,6 @@ function draw() {
 
   asteroids.draw();
   asteroids.move();
-}
-
-function drawRadar() {
-  fill(255, 255, 255, 5);
-  circle(width / 2, height / 2, radarDiameter);
 }
 
 function displayInfo() {
