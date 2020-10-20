@@ -1,14 +1,15 @@
+let smallInnerCircle;
+let bigInnerCircle;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
   noLoop();
   noStroke();
+  const smallerDim = min(windowWidth, windowHeight);
+  smallInnerCircle = smallerDim < 1200 ? smallerDim * 0.08 : 96;
+  bigInnerCircle = smallerDim < 1200 ? smallerDim * 0.18 : 216;
 }
-
-const smallInnerCircle =
-  window.innerWidth < 1200 ? window.innerWidth * 0.08 : 96;
-const bigInnerCircle =
-  window.innerWidth < 1200 ? window.innerWidth * 0.18 : 216;
 
 function draw() {
   drawArcs(300);
