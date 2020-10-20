@@ -1,9 +1,9 @@
 'use strict';
 const particles = [];
+const palette = '#69D2E7,#A7DBD8,#E0E4CC,#F38630,#FA6900'.split(',');
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(50);
   const numOfParticles = ceil(max(windowWidth, windowHeight) / 90);
   for (let i = 0; i < numOfParticles; i++) {
     particles.push(new Particle(random(width), random(height)));
@@ -18,7 +18,8 @@ const Particle = function (x, y) {
 };
 
 function showParticle(particle) {
-  fill(200, 60);
+  fill(palette[4]);
+  // fill(200, 60);
   const diameter = map(particle.vel.mag(), 0.2, 1, 10, 3);
   circle(particle.pos.x, particle.pos.y, diameter);
 
@@ -74,7 +75,7 @@ function checkDistanceSquared(p1, p2) {
 }
 
 function draw() {
-  background(50);
+  background(palette[1]);
   noStroke();
 
   for (let p of particles) {
@@ -94,7 +95,8 @@ function draw() {
         const randomForce = p5.Vector.random2D().mult(random(2));
         p.vel.add(randomForce);
 
-        stroke(220, 80);
+        // stroke(220, 80);
+        stroke(palette[2]);
         sketchyLine(p.pos.x, p.pos.y, particle.pos.x, particle.pos.y, 3);
       }
     }
