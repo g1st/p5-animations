@@ -12,6 +12,7 @@ function setup() {
   generateRects(300);
   noStroke();
   noLoop();
+  blendMode(DIFFERENCE);
 }
 
 function draw() {
@@ -19,12 +20,7 @@ function draw() {
 }
 
 function drawRects() {
-  if (random() < 0.5) {
-    blendMode(DIFFERENCE);
-  } else {
-    blendMode(BLEND);
-    drawingContext.shadowColor = palette.stroke;
-  }
+  drawingContext.shadowColor = palette.stroke;
 
   rects.forEach((r) => {
     push();
@@ -57,6 +53,6 @@ function mouseClicked() {
   blendMode(BLEND);
   background(palette.background);
   blendMode(DIFFERENCE);
-  generateRects(300);
+  generateRects(400);
   redraw();
 }
