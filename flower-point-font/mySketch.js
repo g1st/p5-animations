@@ -2,6 +2,7 @@
 
 let font;
 let points;
+const palette = '#69D2E7,#A7DBD8,#E0E4CC,#F38630,#FA6900'.split(',');
 const word = window.localStorage.getItem('word') || 'Hello';
 
 function setup() {
@@ -17,8 +18,8 @@ const bigBubbleColours = ['pink', 'skyblue', 'snow'];
 let bigBubblePositions;
 
 function draw() {
-  background(50);
-  stroke('white');
+  background(palette[0]);
+  stroke(palette[2]);
   noFill();
 
   for (let point of points) {
