@@ -3,22 +3,22 @@ let letter = 'a';
 
 function setup() {
   createCanvas(400, 400);
-  background(100);
   g = createGraphics(400, 400);
   hiddenGraphics(g);
 }
 
 function draw() {
-  background(200);
+  background('#A3A948');
   copyHiddenImage(g);
-  text('Press any key', 0, height - 5);
+  fill(100);
+  text('Press any key and move mouse around', 0, height - 5);
 }
 
 function hiddenGraphics(g) {
   g.fill(100, 150, 100);
-  g.background(200);
+  g.background('#A3A948');
   g.textAlign(CENTER, CENTER);
-  g.textSize(380);
+  g.textSize(392);
   g.text(letter, g.width / 2, g.height / 2);
 }
 
