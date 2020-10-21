@@ -1,16 +1,19 @@
+const palette = '#607848,#789048,#C0D860,#F0F0D8,#604848'.split(',');
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(200);
-  noLoop();
   rectMode(CENTER);
   noStroke();
+  background(palette[1]);
+  drawTrees();
 }
 
-function draw() {
-  background(200);
-  for (let i = 1; i < 4; i++) {
+function drawTrees() {
+  const numOfTrees = width > 800 ? 3 : 1;
+  const xPos = numOfTrees > 2 ? width / 4 : width / 2;
+  for (let i = 1; i <= numOfTrees; i++) {
     push();
-    translate((width / 4) * i, height * 0.8);
+    translate(xPos * i, height * 1.008);
     drawTree(8);
     pop();
   }
@@ -35,10 +38,10 @@ function drawTree(iterationsRemaining) {
   const branchLength = random(80, 120);
 
   // piece of wood
-  fill(100);
+  fill(palette[4]);
   push();
   translate(0, -branchLength / 2);
-  rect(0, 0, 20, branchLength);
+  rect(0, 0, 20, branchLength, 50);
   pop();
   scale(random(0.7, 0.9));
 
@@ -57,6 +60,6 @@ function drawTree(iterationsRemaining) {
 }
 
 function mouseClicked() {
-  background(200);
-  redraw();
+  background(palette[1]);
+  drawTrees();
 }
