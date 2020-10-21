@@ -1,10 +1,14 @@
+let boxSize;
 function setup() {
-  createCanvas(800, 800, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  // createCanvas(800, 800, WEBGL);
   ambientLight(100, 0, 0);
   let r = 150;
   let g = 200;
   let b = 255;
   directionalLight(r, g, b, -100, -100, -100);
+  let smallerDim = width > height ? height : width;
+  boxSize = floor(smallerDim / 10);
 }
 
 function draw() {
@@ -16,7 +20,7 @@ function draw() {
   let dirY = (mouseY / height - 0.5) * 2;
   directionalLight(220, 100, 150, -dirX, -dirY, -1);
 
-  drawCircleOfCubes(9, 100);
+  drawCircleOfCubes(9, boxSize);
 }
 
 function drawCircleOfCubes(numOfCubes, size) {
