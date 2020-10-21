@@ -1,3 +1,5 @@
+// palette from https://www.colourlovers.com/palette/174686/She_Is_French_Yes
+const palette = '#3E4147,#FFFEDF,#DFBA69,#5A2E2E,#2A2C31'.split(',');
 let ps;
 
 function setup() {
@@ -9,7 +11,7 @@ function setup() {
 }
 
 function draw() {
-  background(127);
+  background(palette[2]);
 
   ps.display();
   ps.update();
@@ -19,7 +21,7 @@ function draw() {
 
 function info() {
   textSize(20);
-  fill(240);
+  fill(20);
   text('Hover mouse to shatter blocks, any key to restore', 10, 30);
 }
 
