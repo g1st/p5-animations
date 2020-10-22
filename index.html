@@ -1,101 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collection of p5.js sketches</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collection of p5.js sketches</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript">
-  </script>
-  <script src="index.js"></script>
-</head>
-
-<body>
-  <p>Hi there, it's best to view it on desktop, though most of the sketches look fine on a phone
-    also.</p>
-  <ol>
-    <li><a href="squares/index.html">Squares</a></li>
-    <li><a href="rotating-squares/index.html">Rotating Squares</a></li>
-    <li><a href="rs-mouse-control/index.html">Rotating Squares Mouse Control</a></li>
-    <li><a href="zebra-circle/index.html">Zebra circle</a></li>
-    <li><a href="spectrum/index.html">Spectrum</a></li>
-    <li><a href="flower-point-font/index.html">Flower Point Font</a></li>
-    <li><a href="draw-mimic/index.html">Mimic drawing</a></li>
-    <li><a href="annoying-fly/index.html">Annoying fly</a></li>
-    <li><a href="random-walkers/index.html">Random Walkers</a></li>
-    <li><a href="mouse-wiggle/index.html">Mouse Wiggle</a></li>
-    <li><a href="cannon-shooter/index.html">Cannon Shooter</a></li>
-    <li><a href="pendulums/index.html">Pendulums</a></li>
-    <li><a href="wave-wannabes/index.html">Wave Wannabes</a></li>
-    <li><a href="fireworks-screensaver/index.html">Fireworks Screensaver</a></li>
-    <li><a href="electric-particles/index.html">Electric Particles</a></li>
-    <li><a href="shatter-squares/index.html">Shatter Squares</a></li>
-    <li><a href="shatter-squares-on-hover/index.html">Shatter Squares On Hover</a></li>
-    <li><a href="perlin-noise-landscape/index.html">Perlin's Noise Landscape</a></li>
-    <li><a href="glyphs/index.html">Glyphs</a></li>
-    <li><a href="distort-grid/index.html">Distort Grid</a></li>
-    <li><a href="asteroidsy/index.html">Asteroidsy</a></li>
-    <li><a href="circle-of-cubes/index.html">Circle Of Cubes</a></li>
-    <li><a href="3D-random-walker/index.html">3D Random Walker</a></li>
-    <li><a href="3D-transformations/index.html">3D Transformations</a></li>
-    <li><a href="voronoi-diagram/index.html">Voronoi Diagram With Borders</a></li>
-    <li><a href="trees/index.html">Trees</a></li>
-    <li><a href="lerpy-dodge/index.html">Lerpy Dodge</a></li>
-    <li><a href="processo/index.html">Processo</a></li>
-    <li><a href="flocking/index.html">Flocks</a></li>
-    <li><a href="perlin-noise-contours/index.html">Perlin Noise Contours</a></li>
-    <li><a href="recursive-quadrants/index.html">Recursive quadrants</a></li>
-    <li><a href="letter-cutting/index.html">Letter cutting</a></li>
-  </ol>
-
-  <p>Thanks for inspiration and help to <a
-      href="https://www.openprocessing.org/user/135249">enz0</a>.
-  </p>
-  <a href="https://github.com/g1st/p5-animations" class="github-corner"
-    aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250"
-      style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
-      aria-hidden="true">
-      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-      <path
-        d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-        fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-      <path
-        d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-        fill="currentColor" class="octo-body"></path>
-    </svg></a>
-  <style>
-    .github-corner:hover .octo-arm {
-      animation: octocat-wave 560ms ease-in-out
-    }
-
-    @keyframes octocat-wave {
-
-      0%,
-      100% {
-        transform: rotate(0)
-      }
-
-      20%,
-      60% {
-        transform: rotate(-25deg)
-      }
-
-      40%,
-      80% {
-        transform: rotate(10deg)
-      }
-    }
-
-    @media (max-width:500px) {
+  <body>
+    <ul class="container">
+      <li class="item">
+        <a href="squares/index.html">
+          <img src="images/squares.png" alt="Squares" title="Squares" />
+        </a>
+      </li>
+      <li class="item">
+        <a href="rotating-squares/index.html">
+          <img
+            src="images/rotating-squares.png"
+            alt="Rotating squares"
+            title="Rotating squares"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="zebra-circle/index.html">
+          <img
+            src="images/zebra-circle.jpg"
+            alt="Zebra circle"
+            title="Zebra circle"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="spectrum/index.html">
+          <img src="images/spectrum.png" alt="Spectrum" title="Spectrum" />
+        </a>
+      </li>
+      <li class="item">
+        <a href="random-walkers/index.html">
+          <img
+            src="images/random-walkers.jpg"
+            alt="Random walkers"
+            title="Random walkers"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="fireworks-screensaver/index.html">
+          <img
+            src="images/fireworks.png"
+            alt="Fireworks screensaver"
+            title="Fireworks screensaver"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="electric-particles/index.html">
+          <img
+            src="images/electric-particles.png"
+            alt="Electric particles"
+            title="Electric particles"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="3D-random-walker/index.html">
+          <img
+            src="images/3D-random-walker.png"
+            alt="3D Random walker"
+            title="3D Random walker"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="3D-transformations/index.html">
+          <img
+            src="images/3D-transformations.png"
+            alt="3D Transformations"
+            title="3D Transformations"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="voronoi-diagram/index.html">
+          <img
+            src="images/voronoi-diagram.png"
+            alt="Voronoi Diagram With Borders"
+            title="Voronoi Diagram With Borders"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="lerpy-dodge/index.html">
+          <img
+            src="images/lerpy-dodge.jpg"
+            alt="Lerpy Dodge"
+            title="Lerpy Dodge"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="processo/index.html">
+          <img src="images/processo.jpg" alt="Processo" title="Processo" />
+        </a>
+      </li>
+      <li class="item">
+        <a href="flocking/index.html">
+          <img
+            src="images/flocks.jpg"
+            alt="Flocks"
+            title="Chasers And Runners"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="recursive-quadrants/index.html">
+          <img
+            src="images/recursive-quadrants.jpg"
+            alt="Recursive quadrants"
+            title="Recursive quadrants"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="flower-point-font/index.html">
+          <img
+            src="images/flower-point-font.png"
+            alt="Flower Point Font"
+            title="Flower Point Font"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="cannon-shooter/index.html">
+          <img
+            src="images/cannon-shooter.png"
+            alt="Cannon Shooter"
+            title="Cannon Shooter"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="pendulums/index.html">
+          <img src="images/pendulums.png" alt="Pendulums" title="Pendulums" />
+        </a>
+      </li>
+      <li class="item">
+        <a href="asteroidsy/index.html">
+          <img
+            src="images/asteroidsy.png"
+            alt="Asteroidsy"
+            title="Asteroidsy"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="annoying-fly/index.html">
+          <img
+            src="images/annoying-fly.png"
+            alt="Annoying fly"
+            title="Annoying fly"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="perlin-noise-landscape/index.html">
+          <img
+            src="images/perlin-noise-landscape.jpg"
+            alt="Perlin's Noise Landscape"
+            title="Perlin's Noise Landscape"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="glyphs/index.html">
+          <img src="images/glyphs.png" alt="Glyphs" title="Glyphs" />
+        </a>
+      </li>
+      <li class="item">
+        <a href="letter-cutting/index.html">
+          <img
+            src="images/letter-cutting.png"
+            alt="Letter cutting"
+            title="Letter cutting"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="distort-grid/index.html">
+          <img
+            src="images/distort-grid.png"
+            alt="Distort Grid"
+            title="Distort Grid"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="trees/index.html">
+          <img src="images/tree.jpg" alt="Trees" title="Trees" />
+        </a>
+      </li>
+      <li class="item">
+        <a href="perlin-noise-contours/index.html">
+          <img
+            src="images/perlin-contours.png"
+            alt="Perlin Noise Contours"
+            title="Perlin Noise Contours"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="circle-of-cubes/index.html">
+          <img
+            src="images/circle-of-cubes.png"
+            alt="Circle Of Cubes"
+            title="Circle Of Cubes"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="wave-wannabes/index.html">
+          <img
+            src="images/wave-wannabes.png"
+            alt="Wave Wannabes"
+            title="Wave Wannabes"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="draw-mimic/index.html">
+          <img
+            src="images/mimic-drawing.jpg"
+            alt="Mimic drawing"
+            title="Mimic drawing"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="shatter-squares-on-hover/index.html">
+          <img
+            src="images/shatter-squares.png"
+            alt="Shatter Squares On Hover"
+            title="Shatter Squares On Hover"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="eyes/index.html">
+          <img src="images/eyes.png" alt="Eyes" title="Eyes" />
+        </a>
+      </li>
+      <li class="item">
+        <a href="generative-grid/index.html">
+          <img
+            src="images/generative-grid.jpg"
+            alt="Generative grid"
+            title="Generative grid"
+          />
+        </a>
+      </li>
+      <li class="item">
+        <a href="layers/index.html">
+          <img src="images/layers.jpg" alt="Layers" title="Layers" />
+        </a>
+      </li>
+      <li class="item">
+        <a href="wave-portrait/index.html">
+          <img
+            src="images/wave-portrait.jpg"
+            alt="Wave portrait"
+            title="Wave portrait"
+          />
+        </a>
+      </li>
+    </ul>
+    <div class="info">
+      <p>
+        Thanks for inspiration and help to
+        <a href="https://www.openprocessing.org/user/135249">enz0</a>.
+      </p>
+    </div>
+    <a
+      href="https://github.com/g1st/p5-animations"
+      class="github-corner"
+      aria-label="View source on GitHub"
+      ><svg
+        width="80"
+        height="80"
+        viewBox="0 0 250 250"
+        style="
+          fill: #151513;
+          color: #fff;
+          position: absolute;
+          top: 0;
+          border: 0;
+          right: 0;
+        "
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg
+    ></a>
+    <style>
       .github-corner:hover .octo-arm {
-        animation: none
+        animation: octocat-wave 560ms ease-in-out;
       }
 
-      .github-corner .octo-arm {
-        animation: octocat-wave 560ms ease-in-out
-      }
-    }
-  </style>
-</body>
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
 
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+  </body>
 </html>

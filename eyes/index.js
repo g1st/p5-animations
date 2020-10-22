@@ -3,16 +3,10 @@ let amount = 0;
 let step = 0.01;
 const eyes = [];
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
-  canvas.position(0, 0);
-  canvas.style('z-index', '-1');
-  background(150);
+  createCanvas(windowWidth, windowHeight);
   noStroke();
+  noCursor();
   initGrid(200);
 }
 
@@ -22,12 +16,15 @@ function draw() {
     amount = 1;
   }
   amount += step;
-  drawingContext.shadowColor = 'lightgrey';
+  drawingContext.shadowColor = 'grey';
 
   const mouseVec = createVector(mouseX, mouseY);
   for (let e of eyes) {
     drawEyes(e, mouseVec);
   }
+
+  fill('orangered');
+  ellipse(mouseX, mouseY, 10, 10);
 }
 
 function drawEyes(eyes, target) {
@@ -57,7 +54,7 @@ function drawEye(eye) {
 
   // pupil
   drawingContext.shadowBlur = 0;
-  fill(240);
+  fill(60);
   circle(eye.size / 4, 0, eye.size / 2);
 }
 
